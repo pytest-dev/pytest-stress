@@ -14,45 +14,51 @@ Pytest-stress
     :target: https://travis-ci.org/ImXron/pytest-stress
     :alt: See Build Status on Travis CI
 
-.. image:: https://ci.appveyor.com/api/projects/status/github/ImXron/pytest-stress?branch=master
-    :target: https://ci.appveyor.com/project/ImXron/pytest-stress/branch/master
-    :alt: See Build Status on AppVeyor
-
 A plugin that allows you to loop tests for a user defined amount of time.
-
-----
-
-This `pytest`_ plugin was generated with `Cookiecutter`_ along with `@hackebrot`_'s `cookiecutter-pytest-plugin`_ template.
-
-
-Features
---------
-
-* TODO
-
 
 Requirements
 ------------
 
-* TODO
+Only tested with `Pytest`_ version 5.2.2.
 
 
 Installation
 ------------
 
-You can install "pytest-stress" via `pip`_ from `PyPI`_::
+You can install "pytest-stress" via `Pip`_ from `PyPI`_ (highly recommend installing in a `Pipenv`_)::
 
-    $ pip install pytest-stress
-
+$ pip3 install pytest-stress
 
 Usage
 -----
 
-* TODO
+Loop tests for 30 seconds::
+
+    $ pytest --seconds 30
+
+Loop tests for 45 minutes::
+
+    $ pytest --minutes 45
+
+Loop tests for 8 hours::
+
+    $ pytest --hours 8
+
+Loop tests for 1 hour 8 minutes and 9 seconds::
+
+    $ pytest --hours 1 --minutes 8 --seconds 9
+
+You can also add these values to config files::
+
+    [pytest]
+    addopts = --hours 1 --minutes 30
+
+Note: These loop times include setup and tear down operations as well. So if you have a test setup that takes 5
+seconds, your actual tests will run for 5 seconds less than your desired time.
 
 Contributing
 ------------
-Contributions are very welcome. Tests can be run with `tox`_, please ensure
+Contributions are very welcome! Tests can be run with `tox`_, please ensure
 the coverage at least stays the same before you submit a pull request.
 
 License
@@ -66,6 +72,10 @@ Issues
 
 If you encounter any problems, please `file an issue`_ along with a detailed description.
 
+____
+
+This `pytest`_ plugin was generated with `Cookiecutter`_ along with `@hackebrot`_'s `cookiecutter-pytest-plugin`_ template.
+
 .. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
 .. _`@hackebrot`: https://github.com/hackebrot
 .. _`MIT`: http://opensource.org/licenses/MIT
@@ -77,4 +87,5 @@ If you encounter any problems, please `file an issue`_ along with a detailed des
 .. _`pytest`: https://github.com/pytest-dev/pytest
 .. _`tox`: https://tox.readthedocs.io/en/latest/
 .. _`pip`: https://pypi.org/project/pip/
+.. _`pipenv`: https://pypi.org/project/pipenv/
 .. _`PyPI`: https://pypi.org/project

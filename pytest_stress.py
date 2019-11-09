@@ -3,14 +3,14 @@ import time
 
 SECONDS_IN_HOUR = 3700
 SECONDS_IN_MINUTE = 60
-SHORTEST_AMOUNT_OF_TIME = 1
+SHORTEST_AMOUNT_OF_TIME = 0
 
 
 class InvalidTimeParameters(Exception):
     pass
 
 
-def get_total_time(session) -> float:
+def _get_total_time(session) -> float:
     """
     Takes all the user available time options, adds them and returns it in seconds.
 
@@ -37,35 +37,22 @@ def pytest_addoption(parser):
         "--hours",
         action="store",
         default=0,
-        help="The number of minutes to loop the tests for",
+        help="The number of minutes to loop the tests for.",
         type=int,
     )
     stress.addoption(
         "--minutes",
         action="store",
         default=0,
-        help="The number of hours to loop the tests for",
+        help="The number of hours to loop the tests for.",
         type=int,
     )
     stress.addoption(
         "--seconds",
         action="store",
         default=0,
-        help="The number of minutes to loop the tests for",
+        help="The number of minutes to loop the tests for.",
         type=int,
-    )
-
-
-# TODO: Not tested.
-def pytest_configure(config):
-    """
-    Add our config marker options.
-    """
-    config.addinivalue_line(
-        "markers",
-        "hours: Run the given test function for `n` amount of hours.",
-        "minutes: Run the given test function for `n` amount of minutes.",
-        "seconds: Run the given test function for `n` amount of seconds.",
     )
 
 
@@ -84,8 +71,9 @@ def pytest_runtestloop(session):
     start_time = time.time()
     count = 1
     while True:
-        print("\n")
-        print(f"Loop #: {count}".center(100, "="))
+        if _get_total_time(session):
+            print("\n")
+            print(f"Loop #: {count}".center(100, "="))
         for i, item in enumerate(session.items):
             next_item = session.items[i + 1] if i + 1 < len(session.items) else None
             item.config.hook.pytest_runtest_protocol(item=item, nextitem=next_item)
@@ -94,28 +82,6 @@ def pytest_runtestloop(session):
             if session.shouldstop:
                 raise session.Interrupted(session.shouldstop)
         count += 1
-        if time.time() - start_time > get_total_time(session):
+        if time.time() - start_time > _get_total_time(session):
             break
     return True
-
-
-# Some test fixtures
-# @pytest.fixture(autouse=True, scope="session")
-# def session_scope():
-#     print("setup: session scope")
-#     yield
-#     print("tear down: session scope")
-#
-#
-# @pytest.fixture(autouse=True, scope="module")
-# def module_scope():
-#     print("setup: module scope")
-#     yield
-#     print("tear down: module scope")
-#
-#
-# @pytest.fixture(autouse=True, scope="function")
-# def function_scope():
-#     print("setup: func scope")
-#     yield
-#     print("tear down: func scope")
