@@ -14,7 +14,7 @@ def read(file_name):
 
 setup(
     name="pytest-stress",
-    version="1.0.0",
+    version="1.0.1",
     author="Imran Mumtaz",
     author_email="iomumtaz@gmail.com",
     maintainer="Imran Mumtaz",
