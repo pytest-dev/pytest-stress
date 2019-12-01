@@ -2,8 +2,8 @@
 Pytest-stress
 =============
 
-.. image:: https://travis-ci.com/ImXron/pytest-stress.svg?branch=master
-    :target: https://travis-ci.com/ImXron/pytest-stress
+.. image:: https://travis-ci.com/pytest-dev/pytest-stress.svg?branch=master
+    :target: https://travis-ci.com/pytest-dev/pytest-stress
     :alt: See Build Status on Travis CI
 
 .. image:: https://img.shields.io/pypi/v/pytest-stress.svg
