@@ -25,9 +25,9 @@ setup(
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     project_urls={
-        'Homepage': 'https://github.com/ImXron/pytest-stress',
-        'Source': 'https://github.com/ImXron/pytest-stress',
-        'Tracker': 'https://github.com/ImXron/pytest-stress/issues',
+        'Homepage': 'https://github.com/pytest-dev/pytest-stress',
+        'Source': 'https://github.com/pytest-dev/pytest-stress',
+        'Tracker': 'https://github.com/pytest-dev/pytest-stress/issues',
     },
     python_requires=">=3.6",
     install_requires=["pytest>=3.6.0"],
