@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.5", "3.6", "3.7", "3.8", "3.9"]
+        python-version: ["3.5", "3.6", "3.7", "3.8", "3.9", "3.10-dev"]
         include:
           # Add new helper variables to existing jobs
           - {python-version: "3.5", TOX_ENV: "py35"}
@@ -19,6 +19,7 @@ jobs:
           - {python-version: "3.7", TOX_ENV: "py37"}
           - {python-version: "3.8", TOX_ENV: "py38"}
           - {python-version: "3.9", TOX_ENV: "py39"}
+          - {python-version: "3.10-dev", TOX_ENV: "py310"}
 
     steps:
       - uses: actions/checkout@v2
