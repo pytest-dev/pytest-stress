@@ -32,7 +32,7 @@ def _get_total_time(session):
     seconds = session.config.option.seconds
     total_time = hours_in_seconds + minutes_in_seconds + seconds
     if total_time < SHORTEST_AMOUNT_OF_TIME:
-        raise InvalidTimeParameterError("Total time cannot be less than: {}!".format(SHORTEST_AMOUNT_OF_TIME))
+        raise InvalidTimeParameterError(f"Total time cannot be less than: {SHORTEST_AMOUNT_OF_TIME}!")
     return total_time
 
 
@@ -45,7 +45,7 @@ def _print_loop_count(count):
     """
     column_length = shutil.get_terminal_size().columns
     print("\n")
-    print(" Loop # {} ".format(count).center(column_length, "="))
+    print(f" Loop # {count} ".center(column_length, "="))
 
 
 def _timed_out(session, start_time):

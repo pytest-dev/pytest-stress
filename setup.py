@@ -29,7 +29,7 @@ setup(
         'Source': 'https://github.com/ImXron/pytest-stress',
         'Tracker': 'https://github.com/ImXron/pytest-stress/issues',
     },
-    python_requires=">=3.5",
+    python_requires=">=3.6",
     install_requires=["pytest>=3.6.0"],
     entry_points={"pytest11": ["pytest_stress = pytest_stress.pytest_stress"]},
     classifiers=[
@@ -39,7 +39,6 @@ setup(
         "Topic :: Software Development :: Testing",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
