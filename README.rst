@@ -2,9 +2,9 @@
 Pytest-stress
 =============
 
-.. image:: https://travis-ci.com/pytest-dev/pytest-stress.svg?branch=master
-    :target: https://travis-ci.com/pytest-dev/pytest-stress
-    :alt: See Build Status on Travis CI
+.. image:: https://github.com/pytest-dev/pytest-stress/actions/workflows/test.yml/badge.svg
+    :target: https://github.com/pytest-dev/pytest-cov/actions
+    :alt: See Build Status on GitHub Actions
 
 .. image:: https://img.shields.io/pypi/v/pytest-stress.svg
     :target: https://pypi.org/project/pytest-stress
