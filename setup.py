@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 import codecs
 import os
@@ -26,11 +25,11 @@ setup(
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     project_urls={
-        'Homepage': 'https://github.com/ImXron/pytest-stress',
-        'Source': 'https://github.com/ImXron/pytest-stress',
-        'Tracker': 'https://github.com/ImXron/pytest-stress/issues',
+        'Homepage': 'https://github.com/pytest-dev/pytest-stress',
+        'Source': 'https://github.com/pytest-dev/pytest-stress',
+        'Tracker': 'https://github.com/pytest-dev/pytest-stress/issues',
     },
-    python_requires=">=3.5",
+    python_requires=">=3.6",
     install_requires=["pytest>=3.6.0"],
     entry_points={"pytest11": ["pytest_stress = pytest_stress.pytest_stress"]},
     classifiers=[
@@ -40,10 +39,11 @@ setup(
         "Topic :: Software Development :: Testing",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: MIT License",
     ],
